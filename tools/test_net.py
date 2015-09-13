@@ -9,6 +9,7 @@
 
 """Test a Fast R-CNN network on an image database."""
 
+import ipdb
 import _init_paths
 from fast_rcnn.test import test_net
 from fast_rcnn.config import cfg, cfg_from_file
@@ -40,11 +41,11 @@ def parse_args():
                         help='dataset to test',
                         default='voc_2007_test', type=str)
     parser.add_argument('--comp', dest='comp_mode', help='competition mode',
-                        action='store_true')
+                         action='store_true')
 
-    if len(sys.argv) == 1:
-        parser.print_help()
-        sys.exit(1)
+    #if len(sys.argv) == 1:
+    #    parser.print_help()
+    #    sys.exit(1)
 
     args = parser.parse_args()
     return args
@@ -55,6 +56,8 @@ if __name__ == '__main__':
     print('Called with args:')
     print(args)
 
+    ipdb.set_trace()	
+	
     if args.cfg_file is not None:
         cfg_from_file(args.cfg_file)
 

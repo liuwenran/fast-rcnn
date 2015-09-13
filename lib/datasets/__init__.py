@@ -4,10 +4,20 @@
 # Licensed under The MIT License [see LICENSE for details]
 # Written by Ross Girshick
 # --------------------------------------------------------
+'''
+import os.path as osp
+import sys
 
+this_dir = osp.dirname(__file__)
+sys.path.insert(0,this_dir)
+'''
 from .imdb import imdb
 from .pascal_voc import pascal_voc
 from . import factory
+
+from .imdb_imagenet import imdb_imagenet
+from .ilsvrc_imagenet import ilsvrc_imagenet
+from . import factory_imagenet
 
 import os.path as osp
 ROOT_DIR = osp.join(osp.dirname(__file__), '..', '..')

@@ -11,6 +11,8 @@ function fast_rcnn_demo()
 [folder, name, ext] = fileparts(mfilename('fullpath'));
 
 caffe_path = fullfile(folder, '..', 'caffe-fast-rcnn', 'matlab', 'caffe');
+% caffe_path = 'external/caffe/matlab/caffe';
+
 addpath(caffe_path);
 
 use_gpu = true;
@@ -39,7 +41,8 @@ im_file = fullfile(folder, '..', 'data', 'demo', [im_id '.jpg']);
 im = imread(im_file);
 dets = fast_rcnn_im_detect(model, im, boxes);
 
-THRESH = 0.8;
+% THRESH = 0.8;
+THRESH = 0.7;
 for j = 1:length(cls_inds)
   cls_ind = cls_inds(j);
   cls_name = cls_names{j};

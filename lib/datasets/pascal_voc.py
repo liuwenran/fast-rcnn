@@ -17,6 +17,8 @@ import utils.cython_bbox
 import cPickle
 import subprocess
 
+
+
 class pascal_voc(datasets.imdb):
     def __init__(self, image_set, year, devkit_path=None):
         datasets.imdb.__init__(self, 'voc_' + year + '_' + image_set)
@@ -282,6 +284,6 @@ class pascal_voc(datasets.imdb):
             self.config['cleanup'] = True
 
 if __name__ == '__main__':
-    d = datasets.pascal_voc('trainval', '2007')
+    d = datasets.pascal_voc('trainval', '2007','/data/VOC2007/VOCdevkit/')
     res = d.roidb
     from IPython import embed; embed()
